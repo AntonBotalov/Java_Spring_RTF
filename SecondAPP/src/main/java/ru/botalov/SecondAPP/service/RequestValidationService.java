@@ -13,14 +13,14 @@ public class RequestValidationService implements ValidationService {
     @Override
     public void isValid(BindingResult bindingResult) throws ValidationFailedException {
         if (bindingResult.hasErrors()){
-            throw new ValidationFailedException(bindingResult.getFieldError().toString());
+            throw new ValidationFailedException(bindingResult.getFieldError().getDefaultMessage());
         }
     }
 
     @Override
     public void validateUid(String uid) throws UnsupportedCodeException {
         if (Objects.equals(uid, "123")){
-            throw new UnsupportedCodeException(uid);
+            throw new UnsupportedCodeException("Unsupported uid value: 123");
         }
     }
 }
