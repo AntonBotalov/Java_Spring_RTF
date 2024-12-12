@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:h2:./testdb/students
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.H2Dialect
+  h2:
+    console.enabled: true
+  server:
+    port: 8080
+
